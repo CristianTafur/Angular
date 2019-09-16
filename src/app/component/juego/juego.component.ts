@@ -26,8 +26,21 @@ export class JuegoComponent implements OnInit {
     this.targetas = [];
     let c = 0,
       i = 0;
+    let use="";
+    let t=0;
     for (let y = 0; y < 6; y++) {
+      use = "";
       for (let x = 0; x < 6; x++) {
+        do {
+           c=Math.floor(Math.random() * (5 - 0)) + 0;
+           if (t>2) {
+             break;
+           } t++;
+           console.log(use);
+           
+        } while (use.includes("" + c)); 
+
+        use += c;
         this.targetas[i] = {
           id: "" + i,
           url: "./assets/img/" + c + ".png",
