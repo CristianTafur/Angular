@@ -1,0 +1,34 @@
+<div class="container">
+  <div align="center">
+    <div *ngIf="esperar" class="alert alert-warning" role="alert">
+      revice las imgenes
+    </div>
+    <div *ngIf="gano" class="alert alert-success" role="alert">
+      <h6 *ngIf="!gamer">jugador 1</h6>
+      <h6 *ngIf="gamer">jugador 2</h6>
+      a ganado
+    </div>
+    <h1 *ngIf="!gamer">jugador 1</h1>
+    <h1 *ngIf="gamer">jugador 2</h1>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-lg-6" align="center">
+      <h2>score gamer 1 : {{ score1 }}</h2>
+    </div>
+    <div class="col-lg-6" align="center">
+      <h2>score gamer 2 : {{ score2 }}</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2" *ngFor="let targeta of targetas; let i = index">
+      <img
+        id="{{ i }}"
+        [src]="url"
+        *ngIf="!targeta.estado"
+        (click)="validarCampos(targeta)"
+      />
+      <img [src]="targeta.url" *ngIf="targeta.estado" />
+    </div>
+  </div>
+</div>
