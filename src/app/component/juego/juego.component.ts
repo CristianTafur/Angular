@@ -33,9 +33,7 @@ export class JuegoComponent implements OnInit {
       for (let x = 0; x < 6; x++) {
         do {
            c=Math.floor(Math.random() * (5 - 0)) + 0;
-           if (t>2) {
-             break;
-           } t++;
+          
            console.log(use);
            
         } while (use.includes("" + c)); 
