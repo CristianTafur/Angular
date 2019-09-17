@@ -32,12 +32,12 @@ export class JuegoComponent implements OnInit {
       use = "";
       for (let x = 0; x < 6; x++) {
         do {
-           c=Math.floor(Math.random() * (5 - 0)) + 0;
-          
-           console.log(use);
-           
+            c=Math.floor(Math.random() * (6 - 0)) + 0;
+         /* if (t>20) {
+            break;
+          }t++;*/
         } while (use.includes("" + c)); 
-
+        console.log(use); 
         use += c;
         this.targetas[i] = {
           id: "" + i,
@@ -46,7 +46,7 @@ export class JuegoComponent implements OnInit {
           correcto: false
         };
         i++;
-        c++;
+        //c++;
       }
       c = 0;
     }
